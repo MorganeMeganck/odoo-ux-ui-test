@@ -36,7 +36,7 @@
 					</li>
 					<li class="nav-item" role="presentation">
 						<a
-							class="nav-link bg-light"
+							class="nav-link"
 							href="#"
 							id="tab-2"
 							data-bs-toggle="tab"
@@ -50,7 +50,7 @@
 					</li>
 					<li class="nav-item" role="presentation">
 						<a
-							class="nav-link bg-light"
+							class="nav-link"
 							href="#"
 							id="tab-3"
 							data-bs-toggle="tab"
@@ -93,10 +93,14 @@
 										>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link border py-3" href="#">A second item</a>
+										<a class="nav-link bg-white border py-3" href="#"
+											>A second item</a
+										>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link py-3" href="#">A third item</a>
+										<a class="nav-link bg-white border py-3" href="#"
+											>A third item</a
+										>
 									</li>
 								</ul>
 							</div>
@@ -113,9 +117,45 @@
 						class="tab-pane fade"
 						id="two"
 						role="tabpanel"
-						aria-labelledby="tab-3"
+						aria-labelledby="tab-2"
 					>
-						...
+						<div class="d-flex align-items-center flex-column p-5">
+							<p>Loading...</p>
+
+							<div>
+								<svg
+									version="1.1"
+									id="loader-1"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px"
+									y="0px"
+									width="40px"
+									height="40px"
+									viewBox="0 0 50 50"
+									style="enable-background: new 0 0 50 50"
+									xml:space="preserve"
+								>
+									<path
+										d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+										;
+										stroke="black"
+										stroke-linecap="round"
+										fill="black"
+									>
+										<animateTransform
+											attributeType="xml"
+											attributeName="transform"
+											type="rotate"
+											from="0 25 25"
+											to="360 25 25"
+											dur="2s"
+											repeatCount="indefinite"
+										/>
+									</path>
+								</svg>
+							</div>
+						</div>
 					</div>
 					<div
 						class="tab-pane fade"
@@ -123,7 +163,27 @@
 						role="tabpanel"
 						aria-labelledby="tab-3"
 					>
-						...
+						<div class="row g-0">
+							<div class="col-md-4">
+								<div
+									class="bg-danger text-white h-100 d-flex justify-content-center align-items-center"
+								>
+									<p class="fs-1">IMAGE</p>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title fw-bold">Card title</h5>
+									<p class="card-text">
+										Some quick example text to build on the card title and make
+										up the bulk of the card's content.
+									</p>
+									<p class="card-text">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
