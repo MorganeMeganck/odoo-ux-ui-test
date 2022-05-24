@@ -1,0 +1,66 @@
+$primary: #0700ff;
+$secondary: #6c757d;
+$success: #3e8d63;
+$info: #7854e4;
+$warning: #b8c924;
+$danger: #d62518;
+$light: #dee2e6;
+$dark: #343a40;
+
+$theme-colors: (
+	primary: $primary,
+	secondary: $secondary,
+	success: $success,
+	info: $info,
+	warning: $warning,
+	danger: $danger,
+	light: $light,
+	dark: $dark,
+);
+
+// font
+@font-face {
+	font-family: "Text Gyre";
+	src: url(../fonts/texgyreheros.gyreheros-regular.otf) format("opentype");
+}
+$font-family-sans-serif: "Text Gyre", -apple-system, BlinkMacSystemFont,
+	"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
+	"Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$h5-font-size: $font-size-base * 1.1 !default;
+
+// tabs
+$link-color: #60538b;
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 1.25rem;
+$nav-link-font-size: null;
+$nav-link-font-weight: null;
+$nav-link-color: $link-color;
+$nav-link-transition: color 0.15s ease-in-out,
+	background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+$nav-tabs-border-color: $light;
+$nav-tabs-border-radius: 0;
+$nav-tabs-link-active-color: $dark;
+$nav-tabs-link-active-bg: white;
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+	sm: 600px,
+	md: 600px,
+	lg: 600px,
+	xl: 600px,
+	xxl: 600px,
+) !default;
+// scss-docs-end container-max-widths
+
+// card
+$card-inner-border-radius: 0;
+$card-cap-padding-y: 0.7rem;
+$card-cap-padding-x: 20px;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
