@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" id="theme-switch" href="assets/css/custom.css" />
   </head>
   <body>
-    <div class="d-lg-flex flex-lg-column justify-content-lg-center min-vh-100">
+    <div class="container">
       <div class="card container p-0">
         <div class="card-header">
           <ul
@@ -251,6 +251,79 @@
           <p class="mb-0">2 days ago</p>
         </div>
       </div>
+      <div class="mt-5">
+        <div class="dropdown dropup">
+          <a
+            class="btn btn-outline-dark dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Choose the card you wish to see
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Primary</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Secondary</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Success</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Warning</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Danger</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Info</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Light</span> Card</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"
+                ><span class="contextual">Dark</span> Card</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const dropdownItem = document.querySelectorAll("a.dropdown-item");
+
+      dropdownItem.forEach(function (item) {
+        item.addEventListener("click", (event) => {
+          const card = document.querySelector(".card");
+          console.log(card);
+          event.preventDefault();
+          let closest = item.firstChild;
+          let text = closest.textContent.toLowerCase();
+          card.className = card.className.replace(/\bcard-[a-zA-Z]*/, "");
+          card.classList.add(`card-${text}`);
+        });
+      });
+    </script>
   </body>
 </html>
