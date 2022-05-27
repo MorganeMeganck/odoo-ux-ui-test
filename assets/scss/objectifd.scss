@@ -1,0 +1,175 @@
+// scss-docs-start gray-color-variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+// scss-docs-end gray-color-variables
+// scss-docs-start color-variables
+$blue: #0700ff;
+$indigo: #6610f2;
+$purple: #7854e4;
+$pink: #d63384;
+$red: #d62518;
+$orange: #fd7e14;
+$yellow: yellow;
+$green: #3e8d63;
+$teal: #20c997;
+$cyan: #0dcaf0;
+$odoo: #714b67;
+$odoo-secondary: #0c8489;
+// scss-docs-end color-variables
+
+$primary: $odoo;
+$secondary: $odoo-secondary;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-300;
+$dark: $gray-800;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark,
+);
+
+// font
+@font-face {
+  font-family: "Text Gyre";
+  src: url(../fonts/texgyreheros.gyreheros-regular.otf) format("opentype");
+}
+$font-family-sans-serif: "Text Gyre", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$h5-font-size: $font-size-base * 1.1 !default;
+
+// tabs
+.nav-tabs .nav-item .nav-link {
+  background-color: $white;
+  box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08),
+    -8px 8px 15px 0 rgba(120, 120, 120, 0.04),
+    3px 3px 30px 0 rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid $light;
+}
+.nav-pills .nav-item .nav-link {
+  border: 1px solid $odoo-secondary;
+  &.active {
+    border: 1px solid $odoo;
+  }
+}
+$link-color: $odoo-secondary;
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 1.25rem;
+$nav-link-font-size: null;
+$nav-link-font-weight: null;
+$nav-link-color: $link-color;
+$nav-link-transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+$nav-tabs-border-color: $light;
+$nav-tabs-border-radius: 0;
+$nav-tabs-link-active-color: $white;
+$nav-tabs-link-active-bg: $odoo;
+$nav-link-disabled-color: $gray-600;
+$nav-tabs-link-active-border-color: $odoo;
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  background-color: $light;
+}
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  xxl: 600px,
+) !default;
+// scss-docs-end container-max-widths
+
+//  Objectif C contextual classes mixin BONUS
+// This mixin will take the argument $color (which you get from the $theme-colors with the sass function map_get()) and provides different styling for all inner elements where needed using the provided color.
+
+// cards
+
+$card-spacer-y: 20px;
+$card-spacer-x: 20px;
+$card-inner-border-radius: 0;
+$card-cap-padding-y: $card-spacer-y;
+$card-cap-padding-x: $card-spacer-x;
+$card-bg: $white;
+$card-border-radius: 0 5px 5px 5px;
+$card-cap-bg: $white;
+.card {
+  padding: 20px;
+  box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08),
+    -8px 8px 15px 0 rgba(120, 120, 120, 0.04),
+    3px 3px 30px 0 rgba(0, 0, 0, 0.04) !important;
+}
+// Container padding
+
+$container-padding-x: 20px;
+
+// Spinners
+.container-svg {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.st1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  fill: none;
+  stroke: #eee;
+  stroke-width: 10;
+}
+.circle .st0 {
+  opacity: 0.2;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 1, 6;
+  enable-background: new;
+}
+
+.container-svg .circle .st0 {
+  opacity: 1;
+  stroke: $odoo;
+  stroke-dashoffset: 350%;
+  stroke-dasharray: 350%;
+  -moz-animation: circle 7s forwards;
+  -webkit-animation: circle 7s forwards;
+  animation: circle 7s forwards;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    stroke-dashoffset: 350%;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 20%;
+  }
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
