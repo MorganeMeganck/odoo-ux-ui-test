@@ -4,16 +4,49 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>Objectif C</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
 
-    <link rel="stylesheet" id="theme-switch" href="assets/css/custom.css" />
+    <link rel="stylesheet" id="theme-switch" href="assets/css/objectifc.css" />
   </head>
   <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Objectif A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="objectif-b.html">Objectif B</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="objectif-c.html">Objectif C</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="objectif-d.html">Objectif D</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container p-0 d-lg-flex flex-lg-column justify-content-lg-center min-vh-100"
+    >
       <div class="card container p-0">
         <div class="card-header">
           <ul
@@ -76,7 +109,7 @@
               role="tabpanel"
               aria-labelledby="tab-1"
             >
-              <div class="card-header">
+              <div class="card-header border-0">
                 <h5 class="card-title fw-bold">Card title</h5>
                 <h6 class="card-subtitle mb-2 fw-bold">Card subtitle</h6>
               </div>
@@ -89,7 +122,7 @@
                   >
                     <li class="nav-item" role="image-change">
                       <a
-                        class="nav-link active py-3"
+                        class="nav-link active border-start-0 py-3"
                         aria-current="page"
                         href="#"
                         class="nav-link"
@@ -105,7 +138,7 @@
                     </li>
                     <li class="nav-item" role="image-change">
                       <a
-                        class="nav-link py-3"
+                        class="nav-link border-start-0 py-3"
                         href="#"
                         class="nav-link"
                         id="pic-2"
@@ -120,7 +153,7 @@
                     </li>
                     <li class="nav-item" role="image-change">
                       <a
-                        class="nav-link py-3"
+                        class="nav-link border-start-0 py-3"
                         href="#"
                         class="nav-link"
                         id="pic-3"
@@ -143,11 +176,11 @@
                       role="tabpanel"
                       aria-labelledby="pic1"
                     >
-                      <div
-                        class="bg-primary text-white h-100 d-flex justify-content-center align-items-center"
-                      >
-                        <p class="fs-1">Pic-1</p>
-                      </div>
+                      <img
+                        alt="pic-1"
+                        class="mw-100"
+                        src="https://fakeimg.pl/650x450/0000FF/000/?text=Pic-1"
+                      />
                     </div>
                     <div
                       class="tab-pane fade h-100"
@@ -155,11 +188,11 @@
                       role="tabpanel"
                       aria-labelledby="pic-2"
                     >
-                      <div
-                        class="bg-warning text-black h-100 d-flex justify-content-center align-items-center"
-                      >
-                        <p class="fs-1">Pic-2</p>
-                      </div>
+                      <img
+                        alt="pic-2"
+                        class="mw-100"
+                        src="https://fakeimg.pl/650x450/FFFF00/000/?text=Pic-2"
+                      />
                     </div>
                     <div
                       class="tab-pane fade h-100"
@@ -167,11 +200,11 @@
                       role="tabpanel"
                       aria-labelledby="pic-3"
                     >
-                      <div
-                        class="bg-black text-white h-100 d-flex justify-content-center align-items-center"
-                      >
-                        <p class="fs-1">Pic-3</p>
-                      </div>
+                      <img
+                        alt="pic-3"
+                        class="mw-100"
+                        src="https://fakeimg.pl/650x450/000000/FFFFFF/?text=Pic-3"
+                      />
                     </div>
                   </div>
                 </div>
@@ -224,11 +257,11 @@
             >
               <div class="row g-0">
                 <div class="col-md-4">
-                  <div
-                    class="bg-danger text-white h-100 d-flex justify-content-center align-items-center"
-                  >
-                    <p class="fs-1">IMAGE</p>
-                  </div>
+                  <img
+                    alt="image"
+                    class="mw-100"
+                    src="https://fakeimg.pl/650x450/FF0000/FFFFFF/?text=IMAGE"
+                  />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -247,7 +280,7 @@
           </div>
         </div>
 
-        <div class="card-footer align-middle">
+        <div class="card-footer border-0 align-middle">
           <p class="mb-0">2 days ago</p>
         </div>
       </div>
