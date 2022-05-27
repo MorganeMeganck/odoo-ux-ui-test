@@ -1,37 +1,11 @@
-// scss-docs-start gray-color-variables
-$white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black: #000;
-// scss-docs-end gray-color-variables
-// scss-docs-start color-variables
-$blue: #0700ff;
-$indigo: #6610f2;
-$purple: #7854e4;
-$pink: #d63384;
-$red: #d62518;
-$orange: #fd7e14;
-$yellow: yellow;
-$green: #3e8d63;
-$teal: #20c997;
-$cyan: #0dcaf0;
-// scss-docs-end color-variables
-
-$primary: $blue;
-$secondary: $gray-600;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
-$light: $gray-300;
-$dark: $gray-800;
+$primary: #0700ff;
+$secondary: #6c757d;
+$success: #3e8d63;
+$info: #7854e4;
+$warning: yellow;
+$danger: #d62518;
+$light: #dee2e6;
+$dark: #343a40;
 
 $theme-colors: (
   primary: $primary,
@@ -64,7 +38,8 @@ $h5-font-size: $font-size-base * 1.1 !default;
 .nav-tabs .nav-item .nav-link {
   background-color: $light;
 }
-$link-color: $purple;
+
+$link-color: #60538b;
 $nav-link-padding-y: 0.5rem;
 $nav-link-padding-x: 1.25rem;
 $nav-link-font-size: null;
@@ -75,8 +50,7 @@ $nav-link-transition: color 0.15s ease-in-out,
 $nav-tabs-border-color: $light;
 $nav-tabs-border-radius: 0;
 $nav-tabs-link-active-color: $dark;
-$nav-tabs-link-active-bg: $white;
-$nav-link-disabled-color: $gray-600;
+$nav-tabs-link-active-bg: white;
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
@@ -84,163 +58,12 @@ $container-max-widths: (
 ) !default;
 // scss-docs-end container-max-widths
 
-//  Objectif C contextual classes mixin BONUS
-// This mixin will take the argument $color (which you get from the $theme-colors with the sass function map_get()) and provides different styling for all inner elements where needed using the provided color.
-
-@mixin context-class($color) {
-  .card-header,
-  .card-footer {
-    .nav-link {
-      &.disabled {
-        background-color: transparent;
-      }
-    }
-  }
-
-  @if $color == null {
-    // map_get() returns NULL if the selected key does not exist. So if it's not in the list, it's something custom.
-    .card {
-      &-header,
-      &-body {
-        .nav-link.disabled {
-          color: $white;
-          background-color: $gray-600;
-        }
-      }
-
-      &-header,
-      &-footer {
-        color: $white;
-        background-color: $dark;
-      }
-
-      &-body {
-        &,
-        .card-header {
-          color: $black;
-          background-color: $white;
-        }
-        .nav-link {
-          background-color: $white;
-          border-color: $gray-300;
-        }
-        .card-subtitle,
-        small {
-          color: $gray-600;
-        }
-      }
-    }
-  } @else {
-    // A valid color was provided, style everything accordingly.
-    .card {
-      &-header,
-      &-footer {
-        color: $white;
-        background-color: darken($color, 10%);
-        .nav-link {
-          border-color: darken($color, 10%);
-          background-color: $color;
-          color: $white;
-          &.active {
-            $nav-tabs-link-active-bg: $color;
-          }
-        }
-      }
-
-      &-title,
-      &-subtitle,
-      &-text {
-        &,
-        small {
-          color: $white;
-        }
-      }
-
-      &-body {
-        &,
-        .card-header,
-        .nav-link {
-          background-color: $color;
-        }
-        .nav-link {
-          $nav-tabs-link-active-bg: $color;
-          color: $white;
-          border-color: darken($color, 10%);
-        }
-      }
-    }
-
-    @if $color == $light {
-      // $light is the only one who uses black text, so make an exception here.
-      // This @if is positioned below the previously defined styles so that it can overwrite them without the need to apply more specific selectors.
-      .card {
-        &-header,
-        &-footer,
-        &-title,
-        &-subtitle,
-        &-text {
-          color: $black;
-        }
-
-        &-header,
-        &-body,
-        &-footer {
-          .nav-link {
-            color: $black;
-          }
-        }
-
-        &-title,
-        &-subtitle,
-        &-text {
-          small {
-            color: $secondary;
-          }
-        }
-      }
-    }
-  }
-}
-// cards
-
+// card
+$card-inner-border-radius: 0;
+$card-cap-padding-y: 0.7rem;
+$card-cap-padding-x: 20px;
 $card-spacer-y: 20px;
 $card-spacer-x: 20px;
-$card-inner-border-radius: 0;
-$card-cap-padding-y: $card-spacer-y;
-$card-cap-padding-x: $card-spacer-x;
-$card-bg: $white;
-
-.card {
-  @include context-class(map_get($theme-colors, "custom"));
-  // Call the mixin, with the contextual class.
-  &.card-primary {
-    @include context-class(map_get($theme-colors, "primary"));
-  }
-  &.card-secondary {
-    @include context-class(map_get($theme-colors, "secondary"));
-  }
-  &.card-success {
-    @include context-class(map_get($theme-colors, "success"));
-  }
-  &.card-danger {
-    @include context-class(map_get($theme-colors, "danger"));
-  }
-  &.card-warning {
-    @include context-class(map_get($theme-colors, "warning"));
-  }
-  &.card-info {
-    @include context-class(map_get($theme-colors, "info"));
-  }
-  &.card-dark {
-    @include context-class(map_get($theme-colors, "dark"));
-  }
-  &.card-light {
-    @include context-class(map_get($theme-colors, "light"));
-  }
-  &.card-dark {
-    @include context-class(map_get($theme-colors, "dark"));
-  }
-}
 
 // Spinners
 
